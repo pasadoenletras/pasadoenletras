@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasado en Letras - Archivo Documental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-principal: #036fb0;
+            --color-fondo: #f4f6f7;
+            --color-texto: #333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .introduccion {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--color-principal);
+        }
+
+        .accordion {
+            background-color: var(--color-principal);
+            color: white;
+            cursor: pointer;
+            padding: 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: 0.3s;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .active, .accordion:hover {
+            background-color: #025a8f;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            font-size: 1.5rem;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 20px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            color: var(--color-principal);
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid var(--color-principal);
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            background-color: white;
+        }
+
+        .btn-link:hover {
+            background-color: var(--color-principal);
+            color: white;
+        }
+
+        h3.eje-nombre {
+            color: var(--color-principal);
+            font-size: 1rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .grid-enlaces {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body id="inicio">
+<header style="background-color: white; border-bottom: 1px solid #eaeaea; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+    <nav style="max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: flex-end; align-items: center; gap: 20px; font-family: 'Roboto', sans-serif;">
+        <a href="index.html" style="color: #555; text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: color 0.3s ease;" onmouseover="this.style.color='#036fb0'" onmouseout="this.style.color='#555'">
+            Recursos Educativos
+        </a>
+        <span style="color: #ddd;">|</span>
+        <a href="pasado.html" style="color: #555; text-decoration: none; font-size: 0.95rem; font-weight: 700; transition: color 0.3s ease;" onmouseover="this.style.color='#036fb0'" onmouseout="this.style.color='#555'">
+            Pasado en Letras
+        </a>
+    </nav>
+</header>
+    <div class="container">
+        
+        <div class="introduccion">
+            <h2 style="margin-top:0; color:var(--color-principal)">Archivo Histórico: Pasado en Letras</h2>
+            <p>Repositorio de documentos, revistas de época, recortes, libros de lectura y audios. Desplegá las categorías para explorar el material disponible.</p>
+        </div>
+
+        <button class="accordion">1. Revistas y Publicaciones de Época</button>
+        <div class="panel">
+            <h3 class="eje-nombre">Ejemplares Sueltos y Recortes</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/1932-ESTUDIOS-106.pdf" target="_blank" class="btn-link">1932-ESTUDIOS-106.pdf</a>
+                <a href="pasadoenletras/avivato_4_abril_1955.pdf" target="_blank" class="btn-link">avivato_4_abril_1955.pdf</a>
+                <a href="pasadoenletras/caras_caretas/caras_caretas_publicidad.pdf" target="_blank" class="btn-link">caras_caretas_publicidad.pdf</a>
+                <a href="pasadoenletras/fray_mocho_agosto1914.pdf" target="_blank" class="btn-link">fray_mocho_agosto1914.pdf</a>
+                <a href="pasadoenletras/gente_enero5_67.pdf" target="_blank" class="btn-link">gente_enero5_67.pdf</a>
+                <a href="pasadoenletras/gente_junio16_66.pdf" target="_blank" class="btn-link">gente_junio16_66.pdf</a>
+                <a href="pasadoenletras/life28_02_66_kennedy.pdf" target="_blank" class="btn-link">life28_02_66_kennedy.pdf</a>
+                <a href="pasadoenletras/panorama_sep_1964.pdf" target="_blank" class="btn-link">panorama_sep_1964.pdf</a>
+                <a href="pasadoenletras/primera_plana_mayo_66_fragmento.pdf" target="_blank" class="btn-link">primera_plana_mayo_66_fragmento.pdf</a>
+                <a href="pasadoenletras/primera_plana_sep_1964.pdf" target="_blank" class="btn-link">primera_plana_sep_1964.pdf</a>
+                <a href="pasadoenletras/revpp_sep1971_peron.pdf" target="_blank" class="btn-link">revpp_sep1971_peron.pdf</a>
+                <a href="pasadoenletras/revpp_sep1971_peron_pel.pdf" target="_blank" class="btn-link">revpp_sep1971_peron_pel.pdf</a>
+                <a href="pasadoenletras/satiricon_dic_75_alta.pdf" target="_blank" class="btn-link">satiricon_dic_75_alta.pdf</a>
+                <a href="pasadoenletras/satiricon_dic_75_baja.pdf" target="_blank" class="btn-link">satiricon_dic_75_baja.pdf</a>
+                <a href="pasadoenletras/selecciones_escolares_18_05_1964.pdf" target="_blank" class="btn-link">selecciones_escolares_18_05_1964.pdf</a>
+                <a href="pasadoenletras/pagina12/Pagina12_juego_tapas.pdf" target="_blank" class="btn-link">Pagina12_juego_tapas.pdf</a>
+            </div>
+
+            <h3 class="eje-nombre">Colección Transformaciones</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/transformaciones01.pdf" target="_blank" class="btn-link">transformaciones01.pdf</a>
+                <a href="pasadoenletras/transformaciones02.pdf" target="_blank" class="btn-link">transformaciones02.pdf</a>
+                <a href="pasadoenletras/transformaciones13.pdf" target="_blank" class="btn-link">transformaciones13.pdf</a>
+                <a href="pasadoenletras/transformaciones57.pdf" target="_blank" class="btn-link">transformaciones57.pdf</a>
+                <a href="pasadoenletras/transformaciones58.pdf" target="_blank" class="btn-link">transformaciones58.pdf</a>
+                <a href="pasadoenletras/transformaciones89.pdf" target="_blank" class="btn-link">transformaciones89.pdf</a>
+            </div>
+        </div>
+
+        <button class="accordion">2. Historia, Dictadura y Derechos Humanos</button>
+        <div class="panel">
+            <h3 class="eje-nombre">24 de Marzo y DDHH</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/24marzo/sietedias_agosto_75.pdf" target="_blank" class="btn-link">sietedias_agosto_75.pdf</a>
+                <a href="pasadoenletras/24marzo/sietedias_junio78.pdf" target="_blank" class="btn-link">sietedias_junio78.pdf</a>
+                <a href="pasadoenletras/24marzo/sietedias_junio82.pdf" target="_blank" class="btn-link">sietedias_junio82.pdf</a>
+                <a href="pasadoenletras/aquienddhh.pdf" target="_blank" class="btn-link">aquienddhh.pdf</a>
+                <a href="pasadoenletras/aquienddhh1.pdf" target="_blank" class="btn-link">aquienddhh1.pdf</a>
+            </div>
+
+            <h3 class="eje-nombre">Coberturas de Revistas (Extra, Gente, Somos, La Semana)</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/extra_julio_1973/extrajulio_1973_pag05.jpeg" target="_blank" class="btn-link">extrajulio_1973_pag05.jpeg</a>
+                <a href="pasadoenletras/extra_julio_1973/extrajulio_1973_pag06.jpeg" target="_blank" class="btn-link">extrajulio_1973_pag06.jpeg</a>
+                <a href="pasadoenletras/extra_julio_1973/extrajulio_1973_pag18.jpeg" target="_blank" class="btn-link">extrajulio_1973_pag18.jpeg</a>
+                <a href="pasadoenletras/extra_julio_1973/extrajulio_1973_pag19.jpeg" target="_blank" class="btn-link">extrajulio_1973_pag19.jpeg</a>
+                <a href="pasadoenletras/gente_abril_76/gente_abril_76_pag4.jpeg" target="_blank" class="btn-link">gente_abril_76_pag4.jpeg</a>
+                <a href="pasadoenletras/gente_abril_76/gente_abril_76_pag5.jpeg" target="_blank" class="btn-link">gente_abril_76_pag5.jpeg</a>
+                <a href="pasadoenletras/gente_abril_76/gente_abril_76_pag6.jpeg" target="_blank" class="btn-link">gente_abril_76_pag6.jpeg</a>
+                <a href="pasadoenletras/gente_abril_76/gente_abril_76_pag7.jpeg" target="_blank" class="btn-link">gente_abril_76_pag7.jpeg</a>
+                <a href="pasadoenletras/gente_abril_76/gente_abril_76_pag8.jpeg" target="_blank" class="btn-link">gente_abril_76_pag8.jpeg</a>
+                <a href="pasadoenletras/gente_abril_76/gente_abril_76_pag10.jpeg" target="_blank" class="btn-link">gente_abril_76_pag10.jpeg</a>
+                <a href="pasadoenletras/gente_abril_76/gente_abril_76_pag11.jpeg" target="_blank" class="btn-link">gente_abril_76_pag11.jpeg</a>
+                <a href="pasadoenletras/gente_abril_76/gente_abril_76_tapa_frag.jpeg" target="_blank" class="btn-link">gente_abril_76_tapa_frag.jpeg</a>
+                <a href="pasadoenletras/lasemana_26_marzo_1980/lasemana26_marzo_1980_pag32.jpeg" target="_blank" class="btn-link">lasemana26_marzo_1980_pag32.jpeg</a>
+                <a href="pasadoenletras/lasemana_26_marzo_1980/lasemana26_marzo_1980_pag33.jpeg" target="_blank" class="btn-link">lasemana26_marzo_1980_pag33.jpeg</a>
+                <a href="pasadoenletras/lasemana_26_marzo_1980/lasemana26_marzo_1980_pag34.jpeg" target="_blank" class="btn-link">lasemana26_marzo_1980_pag34.jpeg</a>
+                <a href="pasadoenletras/lasemana_26_marzo_1980/lasemana26_marzo_1980_pag35.jpeg" target="_blank" class="btn-link">lasemana26_marzo_1980_pag35.jpeg</a>
+                <a href="pasadoenletras/sietedias_junio_1978/sietedias_junio_1976_pag16.jpeg" target="_blank" class="btn-link">sietedias_junio_1976_pag16.jpeg</a>
+                <a href="pasadoenletras/sietedias_junio_1978/sietedias_junio_1976_pag17.jpeg" target="_blank" class="btn-link">sietedias_junio_1976_pag17.jpeg</a>
+                <a href="pasadoenletras/sietedias_junio_1978/sietedias_junio_1976_pag18.jpeg" target="_blank" class="btn-link">sietedias_junio_1976_pag18.jpeg</a>
+                <a href="pasadoenletras/somos_marzo1980.pdf" target="_blank" class="btn-link">somos_marzo1980.pdf</a>
+                <a href="pasadoenletras/somos_marzo1980_img.pdf" target="_blank" class="btn-link">somos_marzo1980_img.pdf</a>
+                <a href="pasadoenletras/somos_noviembre_78/somos_noviembre78_pag08.jpeg" target="_blank" class="btn-link">somos_noviembre78_pag08.jpeg</a>
+                <a href="pasadoenletras/somos_noviembre_78/somos_noviembre78_pag09.jpeg" target="_blank" class="btn-link">somos_noviembre78_pag09.jpeg</a>
+                <a href="pasadoenletras/somos_noviembre_78/somos_noviembre78_pag10.jpeg" target="_blank" class="btn-link">somos_noviembre78_pag10.jpeg</a>
+                <a href="pasadoenletras/somos_noviembre_78/somos_noviembre78_pag11.jpeg" target="_blank" class="btn-link">somos_noviembre78_pag11.jpeg</a>
+                <a href="pasadoenletras/somos_noviembre_78/somos_noviembre78_pag12.jpeg" target="_blank" class="btn-link">somos_noviembre78_pag12.jpeg</a>
+                <a href="pasadoenletras/somos_noviembre_78/somos_noviembre78_pag13.jpeg" target="_blank" class="btn-link">somos_noviembre78_pag13.jpeg</a>
+            </div>
+
+            <h3 class="eje-nombre">Chile 1973 y Latinoamérica</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/allende_1973/gente_allende_1973.pdf" target="_blank" class="btn-link">gente_allende_1973.pdf</a>
+                <a href="pasadoenletras/allende_1973/gente_allende_1973_revista.pdf" target="_blank" class="btn-link">gente_allende_1973_revista.pdf</a>
+                <a href="pasadoenletras/septiembre_1964_chile.pdf" target="_blank" class="btn-link">septiembre_1964_chile.pdf</a>
+            </div>
+        </div>
+
+        <button class="accordion">3. Libros de Lectura y Textos Escolares</button>
+        <div class="panel">
+            <h3 class="eje-nombre">Manuales y Títulos</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/alfarero_laagujademimadre.doc" target="_blank" class="btn-link">alfarero_laagujademimadre.doc</a>
+                <a href="pasadoenletras/alfarero_mibancoescolar.doc" target="_blank" class="btn-link">alfarero_mibancoescolar.doc</a>
+                <a href="pasadoenletras/alfarero_parte1.pdf" target="_blank" class="btn-link">alfarero_parte1.pdf</a>
+                <a href="pasadoenletras/alfarero_parte2.pdf" target="_blank" class="btn-link">alfarero_parte2.pdf</a>
+                <a href="pasadoenletras/alfarero_violin.doc" target="_blank" class="btn-link">alfarero_violin.doc</a>
+                <a href="pasadoenletras/elsembrador_parte1.pdf" target="_blank" class="btn-link">elsembrador_parte1.pdf</a>
+                <a href="pasadoenletras/elsembrador_parte2.pdf" target="_blank" class="btn-link">elsembrador_parte2.pdf</a>
+                <a href="pasadoenletras/manual_estrada/manual_estrada_53_56.docx" target="_blank" class="btn-link">manual_estrada_53_56.docx</a>
+                <a href="pasadoenletras/manual_estrada/manual_estrada_53_56.pdf" target="_blank" class="btn-link">manual_estrada_53_56.pdf</a>
+                <a href="pasadoenletras/nuestro_libro.pdf" target="_blank" class="btn-link">nuestro_libro.pdf</a>
+                <a href="pasadoenletras/pri_lecturas/index.htm" target="_blank" class="btn-link">pri_lecturas (índice)</a>
+                <a href="pasadoenletras/proa_parte1.pdf" target="_blank" class="btn-link">proa_parte1.pdf</a>
+                <a href="pasadoenletras/proa_parte2.pdf" target="_blank" class="btn-link">proa_parte2.pdf</a>
+                <a href="pasadoenletras/sebueno.pdf" target="_blank" class="btn-link">sebueno.pdf</a>
+                <a href="pasadoenletras/sebuenosepobre.pdf" target="_blank" class="btn-link">sebuenosepobre.pdf</a>
+                <a href="pasadoenletras/sepobre.htm" target="_blank" class="btn-link">sepobre.htm</a>
+            </div>
+        </div>
+
+        <button class="accordion">4. Temáticas de Época en Textos</button>
+        <div class="panel">
+            <h3 class="eje-nombre">El trato al indio / La Conquista</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/elindio/elindio.mp3" target="_blank" class="btn-link">elindio.mp3</a>
+                <a href="pasadoenletras/elindio/elindio.pdf" target="_blank" class="btn-link">elindio.pdf</a>
+                <a href="pasadoenletras/elindio/elindio_libroslectura.pdf" target="_blank" class="btn-link">elindio_libroslectura.pdf</a>
+                <a href="pasadoenletras/elindio/huinca.pdf" target="_blank" class="btn-link">huinca.pdf</a>
+                <a href="pasadoenletras/El trato al indio/alfarero001.jpg" target="_blank" class="btn-link">alfarero001.jpg</a>
+                <a href="pasadoenletras/El trato al indio/alfarero002.jpg" target="_blank" class="btn-link">alfarero002.jpg</a>
+                <a href="pasadoenletras/El trato al indio/atalaya001.jpg" target="_blank" class="btn-link">atalaya001.jpg</a>
+                <a href="pasadoenletras/El trato al indio/atalaya002.jpg" target="_blank" class="btn-link">atalaya002.jpg</a>
+                <a href="pasadoenletras/El trato al indio/nuevajornada001.jpg" target="_blank" class="btn-link">nuevajornada001.jpg</a>
+                <a href="pasadoenletras/El trato al indio/nuevajornada002.jpg" target="_blank" class="btn-link">nuevajornada002.jpg</a>
+                <a href="pasadoenletras/El trato al indio/nuevajornada003.jpg" target="_blank" class="btn-link">nuevajornada003.jpg</a>
+                <a href="pasadoenletras/invasion/laconquista_originales.pdf" target="_blank" class="btn-link">laconquista_originales.pdf</a>
+                <a href="pasadoenletras/invasion/laconquista_pasadoenletras.pdf" target="_blank" class="btn-link">laconquista_pasadoenletras.pdf</a>
+            </div>
+
+            <h3 class="eje-nombre">El Trabajo y Los Obreros</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/eltrabajo/trabajo_originales.pdf" target="_blank" class="btn-link">trabajo_originales.pdf</a>
+                <a href="pasadoenletras/eltrabajo/trabajo_pasadoenletras.pdf" target="_blank" class="btn-link">trabajo_pasadoenletras.pdf</a>
+                <a href="pasadoenletras/unobrero/index.htm" target="_blank" class="btn-link">un_obrero_index.htm</a>
+                <a href="pasadoenletras/unobrero/generoso.jpeg" target="_blank" class="btn-link">generoso.jpeg</a>
+                <a href="pasadoenletras/unobrero/un_obrero.jpeg" target="_blank" class="btn-link">un_obrero.jpeg</a>
+                <a href="pasadoenletras/eltrabajo/La_Forestal.jpg" target="_blank" class="btn-link">La_Forestal.jpg</a>
+                <a href="pasadoenletras/eltrabajo/forestal15.jpg" target="_blank" class="btn-link">forestal15.jpg</a>
+                <a href="pasadoenletras/eltrabajo/forestal9.jpg" target="_blank" class="btn-link">forestal9.jpg</a>
+                <a href="pasadoenletras/eltrabajo/alfarero001.jpg" target="_blank" class="btn-link">alfarero001.jpg</a>
+                <a href="pasadoenletras/eltrabajo/alfarero002.jpg" target="_blank" class="btn-link">alfarero002.jpg</a>
+                <a href="pasadoenletras/eltrabajo/alfarero003.jpg" target="_blank" class="btn-link">alfarero003.jpg</a>
+                <a href="pasadoenletras/eltrabajo/alfarero004.jpg" target="_blank" class="btn-link">alfarero004.jpg</a>
+                <a href="pasadoenletras/eltrabajo/alfarero005.jpg" target="_blank" class="btn-link">alfarero005.jpg</a>
+                <a href="pasadoenletras/eltrabajo/alfarero006.jpg" target="_blank" class="btn-link">alfarero006.jpg</a>
+                <a href="pasadoenletras/eltrabajo/alfarero007.jpg" target="_blank" class="btn-link">alfarero007.jpg</a>
+                <a href="pasadoenletras/eltrabajo/elsembrador001.jpg" target="_blank" class="btn-link">elsembrador001.jpg</a>
+                <a href="pasadoenletras/eltrabajo/elsembrador002.jpg" target="_blank" class="btn-link">elsembrador002.jpg</a>
+                <a href="pasadoenletras/eltrabajo/nuevajornada001.jpg" target="_blank" class="btn-link">nuevajornada001.jpg</a>
+                <a href="pasadoenletras/eltrabajo/nuevajornada002.jpg" target="_blank" class="btn-link">nuevajornada002.jpg</a>
+                <a href="pasadoenletras/eltrabajo/nuevajornada003.jpg" target="_blank" class="btn-link">nuevajornada003.jpg</a>
+                <a href="pasadoenletras/eltrabajo/proa001.jpg" target="_blank" class="btn-link">proa001.jpg</a>
+                <a href="pasadoenletras/eltrabajo/proa002.jpg" target="_blank" class="btn-link">proa002.jpg</a>
+                <a href="pasadoenletras/eltrabajo/proa003.jpg" target="_blank" class="btn-link">proa003.jpg</a>
+                <a href="pasadoenletras/eltrabajo/proa004.jpg" target="_blank" class="btn-link">proa004.jpg</a>
+            </div>
+
+            <h3 class="eje-nombre">La Ley y el Orden</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/laleyelorden/El vigilante.docx" target="_blank" class="btn-link">El vigilante.docx</a>
+                <a href="pasadoenletras/laleyelorden/laleyelorden.pdf" target="_blank" class="btn-link">laleyelorden.pdf</a>
+                <a href="pasadoenletras/laleyelorden/laleyelorden_originales.pdf" target="_blank" class="btn-link">laleyelorden_originales.pdf</a>
+                <a href="pasadoenletras/laleyelorden/laleyelorden_pasadoenletras.pdf" target="_blank" class="btn-link">laleyelorden_pasadoenletras.pdf</a>
+                <a href="pasadoenletras/laleyelorden/caminollano001.jpg" target="_blank" class="btn-link">caminollano001.jpg</a>
+                <a href="pasadoenletras/laleyelorden/elsembrador011.jpg" target="_blank" class="btn-link">elsembrador011.jpg</a>
+                <a href="pasadoenletras/laleyelorden/elsembrador012.jpg" target="_blank" class="btn-link">elsembrador012.jpg</a>
+                <a href="pasadoenletras/laleyelorden/estrellita006.jpg" target="_blank" class="btn-link">estrellita006.jpg</a>
+                <a href="pasadoenletras/laleyelorden/gobiernopropio014.jpg" target="_blank" class="btn-link">gobiernopropio014.jpg</a>
+                <a href="pasadoenletras/laleyelorden/gobiernopropio015.jpg" target="_blank" class="btn-link">gobiernopropio015.jpg</a>
+                <a href="pasadoenletras/laleyelorden/gobiernopropio016.jpg" target="_blank" class="btn-link">gobiernopropio016.jpg</a>
+                <a href="pasadoenletras/laleyelorden/gobiernopropio017.jpg" target="_blank" class="btn-link">gobiernopropio017.jpg</a>
+                <a href="pasadoenletras/laleyelorden/gobiernopropio018.jpg" target="_blank" class="btn-link">gobiernopropio018.jpg</a>
+                <a href="pasadoenletras/laleyelorden/nuestrolibro002.jpg" target="_blank" class="btn-link">nuestrolibro002.jpg</a>
+                <a href="pasadoenletras/laleyelorden/nuestrolibro003.jpg" target="_blank" class="btn-link">nuestrolibro003.jpg</a>
+                <a href="pasadoenletras/laleyelorden/nuestrolibro004.jpg" target="_blank" class="btn-link">nuestrolibro004.jpg</a>
+                <a href="pasadoenletras/laleyelorden/nuestrolibro005.jpg" target="_blank" class="btn-link">nuestrolibro005.jpg</a>
+                <a href="pasadoenletras/laleyelorden/nuevajornada007.jpg" target="_blank" class="btn-link">nuevajornada007.jpg</a>
+                <a href="pasadoenletras/laleyelorden/nuevajornada008.jpg" target="_blank" class="btn-link">nuevajornada008.jpg</a>
+                <a href="pasadoenletras/laleyelorden/nuevajornada009.jpg" target="_blank" class="btn-link">nuevajornada009.jpg</a>
+                <a href="pasadoenletras/laleyelorden/nuevajornada010.jpg" target="_blank" class="btn-link">nuevajornada010.jpg</a>
+                <a href="pasadoenletras/laleyelorden/pazytrabajo013.jpg" target="_blank" class="btn-link">pazytrabajo013.jpg</a>
+            </div>
+
+            <h3 class="eje-nombre">El Niño y los Juegos</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/ninoyjuegos/Los niños y el juego.docx" target="_blank" class="btn-link">Los niños y el juego.docx</a>
+                <a href="pasadoenletras/ninoyjuegos/losninosyeljuego.pdf" target="_blank" class="btn-link">losninosyeljuego.pdf</a>
+                <a href="pasadoenletras/ninoyjuegos/elsembrador001.jpg" target="_blank" class="btn-link">elsembrador001.jpg</a>
+                <a href="pasadoenletras/ninoyjuegos/nuestrolibro006.jpg" target="_blank" class="btn-link">nuestrolibro006.jpg</a>
+                <a href="pasadoenletras/ninoyjuegos/paztrabajo007.jpg" target="_blank" class="btn-link">paztrabajo007.jpg</a>
+                <a href="pasadoenletras/ninoyjuegos/proa002.jpg" target="_blank" class="btn-link">proa002.jpg</a>
+                <a href="pasadoenletras/ninoyjuegos/proa003.jpg" target="_blank" class="btn-link">proa003.jpg</a>
+                <a href="pasadoenletras/ninoyjuegos/sebueno004.jpg" target="_blank" class="btn-link">sebueno004.jpg</a>
+                <a href="pasadoenletras/ninoyjuegos/sebueno005.jpg" target="_blank" class="btn-link">sebueno005.jpg</a>
+            </div>
+
+            <h3 class="eje-nombre">Valores de Antaño</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/valoresdeantano/valoreschico.pdf" target="_blank" class="btn-link">valoreschico.pdf</a>
+                <a href="pasadoenletras/valoresdeantano/valoresdeantano.pdf" target="_blank" class="btn-link">valoresdeantano.pdf</a>
+                <a href="pasadoenletras/valoresdeantano/valoresgrande.pdf" target="_blank" class="btn-link">valoresgrande.pdf</a>
+                <a href="pasadoenletras/valoresdeantano/formacionmoral.jpg" target="_blank" class="btn-link">formacionmoral.jpg</a>
+            </div>
+        </div>
+
+        <button class="accordion">5. Efemérides y Fechas Especiales</button>
+        <div class="panel">
+            <h3 class="eje-nombre">25 de Mayo</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/25mayo/asi_esmi_patria.pdf" target="_blank" class="btn-link">asi_esmi_patria.pdf</a>
+                <a href="pasadoenletras/25mayo/estrellita.pdf" target="_blank" class="btn-link">estrellita.pdf</a>
+                <a href="pasadoenletras/25mayo/selecciones_escolares_18_05_1964.pdf" target="_blank" class="btn-link">selecciones_escolares.pdf</a>
+            </div>
+
+            <h3 class="eje-nombre">Malvinas</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/rev_malvinas1974_alta.pdf" target="_blank" class="btn-link">rev_malvinas1974_alta.pdf</a>
+                <a href="pasadoenletras/rev_malvinas1974_baja.pdf" target="_blank" class="btn-link">rev_malvinas1974_baja.pdf</a>
+            </div>
+
+            <h3 class="eje-nombre">Día de la Mujer / Tesoro de la Mujer</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/diamujer/CAPITULO I.docx" target="_blank" class="btn-link">CAPITULO I.docx</a>
+                <a href="pasadoenletras/diamujer/index.htm" target="_blank" class="btn-link">index.htm</a>
+                <a href="pasadoenletras/diamujer/procreacion_miseria.pdf" target="_blank" class="btn-link">procreacion_miseria.pdf</a>
+                <a href="pasadoenletras/diamujer/tesoromujer_cap_I.pdf" target="_blank" class="btn-link">tesoromujer_cap_I.pdf</a>
+                <a href="pasadoenletras/tesoromujer_cap_XVIII.pdf" target="_blank" class="btn-link">tesoromujer_cap_XVIII.pdf</a>
+                <a href="pasadoenletras/diamujer/textos_manuales_revistas.pdf" target="_blank" class="btn-link">textos_manuales_revistas.pdf</a>
+            </div>
+
+            <h3 class="eje-nombre">Día de la Madre</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/diamadre/diadelamadre.pdf" target="_blank" class="btn-link">diadelamadre.pdf</a>
+            </div>
+        </div>
+
+        <button class="accordion">6. Cultura, Arte, Medios y Educación</button>
+        <div class="panel">
+            <h3 class="eje-nombre">Audios Históricos</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/audio/01_losetodo.mp3" target="_blank" class="btn-link">01_losetodo.mp3</a>
+                <a href="pasadoenletras/audio/02_cortos_casi_radiales.mp3" target="_blank" class="btn-link">02_cortos_casi_radiales.mp3</a>
+                <a href="pasadoenletras/audio/03_asi_aprendimos.mp3" target="_blank" class="btn-link">03_asi_aprendimos.mp3</a>
+                <a href="pasadoenletras/audio/04_el_indio.mp3" target="_blank" class="btn-link">04_el_indio.mp3</a>
+                <a href="pasadoenletras/audio/05_historia_mmc.mp3" target="_blank" class="btn-link">05_historia_mmc.mp3</a>
+            </div>
+
+            <h3 class="eje-nombre">UNESCO 1972</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/unesco72/causasdesigualdad.pdf" target="_blank" class="btn-link">causasdesigualdad.pdf</a>
+                <a href="pasadoenletras/unesco72/fracasoescolar_ch.pdf" target="_blank" class="btn-link">fracasoescolar_ch.pdf</a>
+                <a href="pasadoenletras/unesco72/fracasoescolar_g.pdf" target="_blank" class="btn-link">fracasoescolar_g.pdf</a>
+                <a href="pasadoenletras/unesco72/granencuesta.pdf" target="_blank" class="btn-link">granencuesta.pdf</a>
+                <a href="pasadoenletras/unesco72/ninas.jpg" target="_blank" class="btn-link">ninas.jpg</a>
+                <a href="pasadoenletras/unesco72/portada.jpg" target="_blank" class="btn-link">portada.jpg</a>
+            </div>
+
+            <h3 class="eje-nombre">Medios de Comunicación y Educación</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/medioslocos_capitulo01.pdf" target="_blank" class="btn-link">medioslocos_capitulo01.pdf</a>
+                <a href="pasadoenletras/medioslocos_capitulo03.pdf" target="_blank" class="btn-link">medioslocos_capitulo03.pdf</a>
+                <a href="pasadoenletras/medioslocos_capitulo04.pdf" target="_blank" class="btn-link">medioslocos_capitulo04.pdf</a>
+                <a href="pasadoenletras/medioslocos_capitulo05.pdf" target="_blank" class="btn-link">medioslocos_capitulo05.pdf</a>
+                <a href="pasadoenletras/haciaelano2018_comunicacion.pdf" target="_blank" class="btn-link">haciaelano2018_comunicacion.pdf</a>
+                <a href="pasadoenletras/hacialaescuela.docx" target="_blank" class="btn-link">hacialaescuela.docx</a>
+                <a href="pasadoenletras/las_noticias_y_la_informacion_ agencias.pdf" target="_blank" class="btn-link">las_noticias_agencias.pdf</a>
+                <a href="pasadoenletras/las_noticias_y_la_informacion_entrevista.pdf" target="_blank" class="btn-link">las_noticias_entrevista.pdf</a>
+                <a href="pasadoenletras/la_maestra_electronica.pdf" target="_blank" class="btn-link">la_maestra_electronica.pdf</a>
+                <a href="pasadoenletras/estudios_educacion.pdf" target="_blank" class="btn-link">estudios_educacion.pdf</a>
+                <a href="pasadoenletras/haberlosabido.htm" target="_blank" class="btn-link">haberlosabido.htm</a>
+                <a href="pasadoenletras/haberlosabido.pdf" target="_blank" class="btn-link">haberlosabido.pdf</a>
+                <a href="pasadoenletras/pobreza.htm" target="_blank" class="btn-link">pobreza.htm</a>
+                <a href="pasadoenletras/la_ausencia_del_hombre_alta.pdf" target="_blank" class="btn-link">la_ausencia_del_hombre_alta.pdf</a>
+                <a href="pasadoenletras/la_ausencia_del_hombre_baja.pdf" target="_blank" class="btn-link">la_ausencia_del_hombre_baja.pdf</a>
+            </div>
+
+            <h3 class="eje-nombre">Literatura, Personajes y Arte</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/dali_imusi/dali.htm" target="_blank" class="btn-link">dali.htm</a>
+                <a href="pasadoenletras/dali_imusi/dali.pdf" target="_blank" class="btn-link">dali.pdf</a>
+                <a href="pasadoenletras/dali_imusi/dali03ch.jpg" target="_blank" class="btn-link">dali03ch.jpg</a>
+                <a href="pasadoenletras/dali_imusi/imusicisti.htm" target="_blank" class="btn-link">imusicisti.htm</a>
+                <a href="pasadoenletras/dali_imusi/imusicisti.pdf" target="_blank" class="btn-link">imusicisti.pdf</a>
+                <a href="pasadoenletras/dali_imusi/imusicisti_chica.jpg" target="_blank" class="btn-link">imusicisti_chica.jpg</a>
+                <a href="pasadoenletras/santoro/roberto_santoro_revista_crisis.pdf" target="_blank" class="btn-link">roberto_santoro.pdf</a>
+                <a href="pasadoenletras/santoro/crisis_09_86_santoro.pdf" target="_blank" class="btn-link">crisis_09_86_santoro.pdf</a>
+                <a href="pasadoenletras/santoro/foto.jpg" target="_blank" class="btn-link">santoro_foto.jpg</a>
+                <a href="pasadoenletras/santoro/tapa.jpg" target="_blank" class="btn-link">santoro_tapa.jpg</a>
+                <a href="pasadoenletras/reportaje_sabato_1976.pdf" target="_blank" class="btn-link">reportaje_sabato_1976.pdf</a>
+                <a href="pasadoenletras/unamuno/carasycaretas_munamuno.pdf" target="_blank" class="btn-link">carasycaretas_munamuno.pdf</a>
+                <a href="pasadoenletras/galeano_rc.pdf" target="_blank" class="btn-link">galeano_rc.pdf</a>
+                <a href="pasadoenletras/delahabana.pdf" target="_blank" class="btn-link">delahabana.pdf</a>
+                <a href="pasadoenletras/album_mundial74.pdf" target="_blank" class="btn-link">album_mundial74.pdf</a>
+                <a href="pasadoenletras/salvat_publicidad.pdf" target="_blank" class="btn-link">salvat_publicidad.pdf</a>
+            </div>
+
+            <h3 class="eje-nombre">Mapas e Historia de América</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/historia_america.doc" target="_blank" class="btn-link">historia_america.doc</a>
+                <a href="pasadoenletras/historia_america.pdf" target="_blank" class="btn-link">historia_america.pdf</a>
+                <a href="pasadoenletras/mapas/enciclopedia_sopena_1928.jpeg" target="_blank" class="btn-link">enciclopedia_sopena_1928.jpeg</a>
+                <a href="pasadoenletras/mapas/enciclopedia_sopena_1928_africa.jpeg" target="_blank" class="btn-link">sopena_1928_africa.jpeg</a>
+                <a href="pasadoenletras/mapas/enciclopedia_sopena_1928_america.jpeg" target="_blank" class="btn-link">sopena_1928_america.jpeg</a>
+                <a href="pasadoenletras/mapas/enciclopedia_sopena_1928_argentina.jpeg" target="_blank" class="btn-link">sopena_1928_argentina.jpeg</a>
+                <a href="pasadoenletras/mapas/enciclopedia_sopena_1928_asia.jpg" target="_blank" class="btn-link">sopena_1928_asia.jpg</a>
+                <a href="pasadoenletras/mapas/enciclopedia_sopena_1928_europa.jpg" target="_blank" class="btn-link">sopena_1928_europa.jpg</a>
+                <a href="pasadoenletras/mapas/enciclopedia_sopena_1928_oceania.jpg" target="_blank" class="btn-link">sopena_1928_oceania.jpg</a>
+                <a href="pasadoenletras/mapas/estrada_cuarto_1953_argentina.jpeg" target="_blank" class="btn-link">estrada_cuarto_1953_argentina.jpeg</a>
+            </div>
+
+            <h3 class="eje-nombre">Varios / Editando / Imágenes Base</h3>
+            <div class="grid-enlaces">
+                <a href="pasadoenletras/editando/CAPITULO I.docx" target="_blank" class="btn-link">editando_CAPITULO_I.docx</a>
+                <a href="pasadoenletras/PEL2016_07.html" target="_blank" class="btn-link">PEL2016_07.html</a>
+                <a href="pasadoenletras/PEL2016_07.pdf" target="_blank" class="btn-link">PEL2016_07.pdf</a>
+                <a href="pasadoenletras/imagenes/gente_16junio1966_tapa_ch.jpg" target="_blank" class="btn-link">gente_16junio1966_tapa_ch.jpg</a>
+                <a href="pasadoenletras/imagenes/gente_3enero1967_tapa_ch.jpg" target="_blank" class="btn-link">gente_3enero1967_tapa_ch.jpg</a>
+                <a href="pasadoenletras/imagenes/pan_abr_67_tapa_ch.jpg" target="_blank" class="btn-link">pan_abr_67_tapa_ch.jpg</a>
+                <a href="pasadoenletras/pan_abril_67.pdf" target="_blank" class="btn-link">pan_abril_67.pdf</a>
+                <a href="pasadoenletras/imagenes/icono-facebook.png" target="_blank" class="btn-link">icono-facebook.png</a>
+                <a href="pasadoenletras/imagenes/logo.png" target="_blank" class="btn-link">logo.png</a>
+                <a href="pasadoenletras/imagenes/logoinv.png" target="_blank" class="btn-link">logoinv.png</a>
+                <a href="pasadoenletras/imagenes/portadaparafondo.jpg" target="_blank" class="btn-link">portadaparafondo.jpg</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+
+</body>
+</html>
