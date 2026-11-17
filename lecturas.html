@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros de lectura - Pasado en Letras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-principal: #036fb0;
+            --color-fondo: #f4f6f7;
+            --color-texto: #333;
+        }
+        html { scroll-behavior: smooth; }
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+        .volver { display: inline-block; margin-bottom: 15px; color: var(--color-principal);
+            font-weight: 700; text-decoration: none; }
+        .volver:hover { text-decoration: underline; }
+        .introduccion {
+            background: white; padding: 25px; border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px;
+            border-left: 5px solid var(--color-principal);
+        }
+        .introduccion h1 { margin: 0 0 8px; font-size: 1.5rem; color: var(--color-principal); }
+        .introduccion p { margin: 0; }
+        .temas-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+        .btn-link {
+            display: inline-block; color: var(--color-principal); text-decoration: none;
+            font-weight: 700; border: 1px solid var(--color-principal); padding: 8px 15px;
+            border-radius: 4px; font-size: 0.9rem; transition: 0.2s; background-color: white;
+        }
+        .btn-link:hover { background-color: var(--color-principal); color: white; }
+        .btn-link.mini { padding: 4px 10px; font-size: 0.8rem; font-weight: 400; }
+        section.tema {
+            background: white; border: 1px solid #ddd; border-radius: 8px;
+            padding: 5px 20px 25px; margin-top: 25px; scroll-margin-top: 15px;
+        }
+        h2.tema-titulo {
+            color: var(--color-principal); font-size: 1.1rem; text-transform: uppercase;
+            letter-spacing: 1px; border-bottom: 1px solid #eee; padding-bottom: 8px;
+        }
+        .docs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+        .carrusel { outline: none; }
+        .cab { text-align: center; margin-bottom: 10px; }
+        .cab .libro { font-size: 1.25rem; font-weight: 700; }
+        .cab .detalle { font-size: 0.9rem; color: #666; min-height: 1.4em; }
+        .escena { display: flex; align-items: center; gap: 10px; justify-content: center; }
+        .escena .vista {
+            flex: 1; min-width: 0; display: flex; justify-content: center;
+            background: #eceff1; border-radius: 6px; min-height: 240px; align-items: center;
+        }
+        .escena img { max-width: 100%; max-height: 78vh; height: auto; display: block; }
+        .flecha {
+            flex: none; width: 46px; height: 46px; border-radius: 50%;
+            border: 1px solid var(--color-principal); background: white;
+            color: var(--color-principal); font-size: 1.4rem; cursor: pointer; transition: 0.2s;
+        }
+        .flecha:hover, .flecha:focus-visible { background: var(--color-principal); color: white; }
+        .pie { text-align: center; margin-top: 10px; font-size: 0.9rem; color: #555; }
+        .puntos { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 8px; }
+        .punto {
+            width: 11px; height: 11px; border-radius: 50%; border: 1px solid var(--color-principal);
+            background: white; padding: 0; cursor: pointer;
+        }
+        .punto.actual { background: var(--color-principal); }
+        .punto.inicio { width: 14px; height: 14px; }
+        @media (max-width: 600px) {
+            .flecha { width: 36px; height: 36px; font-size: 1.1rem; }
+            .container { padding: 0 12px; }
+            section.tema { padding: 5px 12px 20px; }
+        }
+    </style>
+</head>
+<body id="inicio">
+    <div class="container">
+        <a class="volver" href="index.html">&larr; Volver al índice</a>
+        <div class="introduccion">
+            <h1>Libros de lectura: lo que se enseñaba</h1>
+            <p>Páginas de libros de lectura escolares agrupadas por tema. Pasá las imágenes con las flechas,
+            con el teclado o deslizando el dedo; al tocar una imagen se abre ampliada.</p>
+        </div>
+        <nav class="temas-nav" id="nav"></nav>
+        <div id="temas"></div>
+    </div>
+
+    <script>
+    var TEMAS = [
+ {
+  "id": "indio",
+  "titulo": "El trato al indio y la Conquista",
+  "libros": [
+   {
+    "titulo": "Alfarero",
+    "detalle": "José Forgione · Kapelusz · 7.ª edición, 1959 · cuarto grado",
+    "imagenes": [
+     "pasadoenletras/El%20trato%20al%20indio/alfarero001.jpg",
+     "pasadoenletras/El%20trato%20al%20indio/alfarero002.jpg"
+    ]
+   },
+   {
+    "titulo": "Nueva Jornada",
+    "detalle": "Capdevila y García Velloso · Kapelusz · 1956",
+    "imagenes": [
+     "pasadoenletras/El%20trato%20al%20indio/nuevajornada001.jpg",
+     "pasadoenletras/El%20trato%20al%20indio/nuevajornada002.jpg",
+     "pasadoenletras/El%20trato%20al%20indio/nuevajornada003.jpg"
+    ]
+   },
+   {
+    "titulo": "Atalaya",
+    "detalle": "",
+    "imagenes": [
+     "pasadoenletras/El%20trato%20al%20indio/atalaya001.jpg",
+     "pasadoenletras/El%20trato%20al%20indio/atalaya002.jpg"
+    ]
+   }
+  ],
+  "docs": [
+   {
+    "href": "pasadoenletras/elindio/elindio.pdf",
+    "texto": "Los indios (texto)"
+   },
+   {
+    "href": "pasadoenletras/elindio/elindio.mp3",
+    "texto": "El indio (audio)"
+   },
+   {
+    "href": "pasadoenletras/elindio/elindio_libroslectura.pdf",
+    "texto": "El indio en los libros de lectura"
+   },
+   {
+    "href": "pasadoenletras/elindio/huinca.pdf",
+    "texto": "Huinca"
+   },
+   {
+    "href": "pasadoenletras/invasion/laconquista_originales.pdf",
+    "texto": "La conquista: originales"
+   },
+   {
+    "href": "pasadoenletras/invasion/laconquista_pasadoenletras.pdf",
+    "texto": "La conquista: edición Pasado en Letras"
+   }
+  ]
+ },
+ {
+  "id": "trabajo",
+  "titulo": "El trabajo y los obreros",
+  "libros": [
+   {
+    "titulo": "Alfarero",
+    "detalle": "José Forgione · Kapelusz · 7.ª edición, 1959 · cuarto grado",
+    "imagenes": [
+     "pasadoenletras/eltrabajo/alfarero001.jpg",
+     "pasadoenletras/eltrabajo/alfarero002.jpg",
+     "pasadoenletras/eltrabajo/alfarero003.jpg",
+     "pasadoenletras/eltrabajo/alfarero004.jpg",
+     "pasadoenletras/eltrabajo/alfarero005.jpg",
+     "pasadoenletras/eltrabajo/alfarero006.jpg",
+     "pasadoenletras/eltrabajo/alfarero007.jpg"
+    ]
+   },
+   {
+    "titulo": "El sembrador",
+    "detalle": "H. P. Blomberg · Estrada · 1925 · tercer grado",
+    "imagenes": [
+     "pasadoenletras/eltrabajo/elsembrador001.jpg",
+     "pasadoenletras/eltrabajo/elsembrador002.jpg"
+    ]
+   },
+   {
+    "titulo": "Nueva Jornada",
+    "detalle": "Capdevila y García Velloso · Kapelusz · 1956",
+    "imagenes": [
+     "pasadoenletras/eltrabajo/nuevajornada001.jpg",
+     "pasadoenletras/eltrabajo/nuevajornada002.jpg",
+     "pasadoenletras/eltrabajo/nuevajornada003.jpg"
+    ]
+   },
+   {
+    "titulo": "Proa",
+    "detalle": "",
+    "imagenes": [
+     "pasadoenletras/eltrabajo/proa001.jpg",
+     "pasadoenletras/eltrabajo/proa002.jpg",
+     "pasadoenletras/eltrabajo/proa003.jpg",
+     "pasadoenletras/eltrabajo/proa004.jpg"
+    ]
+   },
+   {
+    "titulo": "La Forestal",
+    "detalle": "",
+    "imagenes": [
+     "pasadoenletras/eltrabajo/La_Forestal.jpg",
+     "pasadoenletras/eltrabajo/forestal9.jpg",
+     "pasadoenletras/eltrabajo/forestal15.jpg"
+    ]
+   }
+  ],
+  "docs": [
+   {
+    "href": "pasadoenletras/eltrabajo/trabajo_originales.pdf",
+    "texto": "El trabajo: originales"
+   },
+   {
+    "href": "pasadoenletras/eltrabajo/trabajo_pasadoenletras.pdf",
+    "texto": "El trabajo: edición Pasado en Letras"
+   },
+   {
+    "href": "pasadoenletras/unobrero/index.htm",
+    "texto": "Un obrero (nota)"
+   },
+   {
+    "href": "pasadoenletras/unobrero/generoso.jpeg",
+    "texto": "Generoso"
+   },
+   {
+    "href": "pasadoenletras/unobrero/un_obrero.jpeg",
+    "texto": "Un obrero"
+   }
+  ]
+ },
+ {
+  "id": "leyorden",
+  "titulo": "La ley y el orden",
+  "libros": [
+   {
+    "titulo": "El sembrador",
+    "detalle": "H. P. Blomberg · Estrada · 1925 · tercer grado",
+    "imagenes": [
+     "pasadoenletras/laleyelorden/elsembrador011.jpg",
+     "pasadoenletras/laleyelorden/elsembrador012.jpg"
+    ]
+   },
+   {
+    "titulo": "Nueva Jornada",
+    "detalle": "Capdevila y García Velloso · Kapelusz · 1956",
+    "imagenes": [
+     "pasadoenletras/laleyelorden/nuevajornada007.jpg",
+     "pasadoenletras/laleyelorden/nuevajornada008.jpg",
+     "pasadoenletras/laleyelorden/nuevajornada009.jpg",
+     "pasadoenletras/laleyelorden/nuevajornada010.jpg"
+    ]
+   },
+   {
+    "titulo": "Nuestro Libro",
+    "detalle": "Rogelio Outón · Kapelusz · 1923 · segundo grado",
+    "imagenes": [
+     "pasadoenletras/laleyelorden/nuestrolibro002.jpg",
+     "pasadoenletras/laleyelorden/nuestrolibro003.jpg",
+     "pasadoenletras/laleyelorden/nuestrolibro004.jpg",
+     "pasadoenletras/laleyelorden/nuestrolibro005.jpg"
+    ]
+   },
+   {
+    "titulo": "Paz y Trabajo",
+    "detalle": "Carmen Hermo · Troquel · 1957 · cuarto grado",
+    "imagenes": [
+     "pasadoenletras/laleyelorden/pazytrabajo013.jpg"
+    ]
+   },
+   {
+    "titulo": "Gobierno propio",
+    "detalle": "",
+    "imagenes": [
+     "pasadoenletras/laleyelorden/gobiernopropio014.jpg",
+     "pasadoenletras/laleyelorden/gobiernopropio015.jpg",
+     "pasadoenletras/laleyelorden/gobiernopropio016.jpg",
+     "pasadoenletras/laleyelorden/gobiernopropio017.jpg",
+     "pasadoenletras/laleyelorden/gobiernopropio018.jpg"
+    ]
+   },
+   {
+    "titulo": "Estrellita",
+    "detalle": "",
+    "imagenes": [
+     "pasadoenletras/laleyelorden/estrellita006.jpg"
+    ]
+   },
+   {
+    "titulo": "Camino llano",
+    "detalle": "",
+    "imagenes": [
+     "pasadoenletras/laleyelorden/caminollano001.jpg"
+    ]
+   }
+  ],
+  "docs": [
+   {
+    "href": "pasadoenletras/laleyelorden/laleyelorden.pdf",
+    "texto": "La ley y el orden"
+   },
+   {
+    "href": "pasadoenletras/laleyelorden/laleyelorden_originales.pdf",
+    "texto": "Originales"
+   },
+   {
+    "href": "pasadoenletras/laleyelorden/laleyelorden_pasadoenletras.pdf",
+    "texto": "Edición Pasado en Letras"
+   },
+   {
+    "href": "pasadoenletras/laleyelorden/El%20vigilante.docx",
+    "texto": "El vigilante (.docx)"
+   }
+  ]
+ },
+ {
+  "id": "juegos",
+  "titulo": "El niño y los juegos",
+  "libros": [
+   {
+    "titulo": "El sembrador",
+    "detalle": "H. P. Blomberg · Estrada · 1925 · tercer grado",
+    "imagenes": [
+     "pasadoenletras/ninoyjuegos/elsembrador001.jpg"
+    ]
+   },
+   {
+    "titulo": "Nuestro Libro",
+    "detalle": "Rogelio Outón · Kapelusz · 1923 · segundo grado",
+    "imagenes": [
+     "pasadoenletras/ninoyjuegos/nuestrolibro006.jpg"
+    ]
+   },
+   {
+    "titulo": "Paz y Trabajo",
+    "detalle": "Carmen Hermo · Troquel · 1957 · cuarto grado",
+    "imagenes": [
+     "pasadoenletras/ninoyjuegos/paztrabajo007.jpg"
+    ]
+   },
+   {
+    "titulo": "Sé bueno",
+    "detalle": "Juan Jáuregui · Kapelusz · 1932 · tercer grado",
+    "imagenes": [
+     "pasadoenletras/ninoyjuegos/sebueno004.jpg",
+     "pasadoenletras/ninoyjuegos/sebueno005.jpg"
+    ]
+   },
+   {
+    "titulo": "Proa",
+    "detalle": "",
+    "imagenes": [
+     "pasadoenletras/ninoyjuegos/proa002.jpg",
+     "pasadoenletras/ninoyjuegos/proa003.jpg"
+    ]
+   }
+  ],
+  "docs": [
+   {
+    "href": "pasadoenletras/ninoyjuegos/losninosyeljuego.pdf",
+    "texto": "Los niños y el juego"
+   }
+  ]
+ }
+];
+
+    function el(tag, cls, txt) {
+        var e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (txt !== undefined) e.textContent = txt;
+        return e;
+    }
+
+    function crearCarrusel(tema) {
+        var fotos = [];
+        tema.libros.forEach(function (l, li) {
+            l.imagenes.forEach(function (src, n) {
+                fotos.push({ src: src, libro: li, n: n + 1, de: l.imagenes.length });
+            });
+        });
+        var actual = 0;
+
+        var cont = el('div', 'carrusel');
+        cont.tabIndex = 0;
+        cont.setAttribute('aria-label', 'Carrusel: ' + tema.titulo);
+
+        var cab = el('div', 'cab');
+        var tit = el('div', 'libro'), det = el('div', 'detalle');
+        cab.appendChild(tit); cab.appendChild(det);
+
+        var escena = el('div', 'escena');
+        var ant = el('button', 'flecha', '‹'); ant.setAttribute('aria-label', 'Imagen anterior');
+        var sig = el('button', 'flecha', '›'); sig.setAttribute('aria-label', 'Imagen siguiente');
+        var vista = el('div', 'vista');
+        var enlace = el('a'); enlace.target = '_blank'; enlace.rel = 'noopener';
+        var img = el('img'); img.decoding = 'async';
+        enlace.appendChild(img); vista.appendChild(enlace);
+        escena.appendChild(ant); escena.appendChild(vista); escena.appendChild(sig);
+
+        var pie = el('div', 'pie');
+        var puntos = el('div', 'puntos');
+        var botones = fotos.map(function (f, i) {
+            var b = el('button', 'punto' + (f.n === 1 ? ' inicio' : ''));
+            b.setAttribute('aria-label', tema.libros[f.libro].titulo + ', imagen ' + f.n);
+            b.addEventListener('click', function () { ir(i); });
+            puntos.appendChild(b);
+            return b;
+        });
+
+        function precargar(i) {
+            if (i >= 0 && i < fotos.length) { (new Image()).src = fotos[i].src; }
+        }
+
+        function ir(i) {
+            actual = (i + fotos.length) % fotos.length;
+            var f = fotos[actual], l = tema.libros[f.libro];
+            img.src = f.src;
+            img.alt = l.titulo + ', imagen ' + f.n + ' de ' + f.de;
+            enlace.href = f.src;
+            tit.textContent = l.titulo;
+            det.textContent = l.detalle;
+            pie.textContent = 'Imagen ' + f.n + ' de ' + f.de + ' de este libro · Libro ' +
+                (f.libro + 1) + ' de ' + tema.libros.length + ' · ' + (actual + 1) + '/' + fotos.length;
+            botones.forEach(function (b, k) { b.classList.toggle('actual', k === actual); });
+            precargar(actual + 1); precargar(actual - 1);
+        }
+
+        ant.addEventListener('click', function () { ir(actual - 1); });
+        sig.addEventListener('click', function () { ir(actual + 1); });
+        cont.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowLeft') { ir(actual - 1); e.preventDefault(); }
+            if (e.key === 'ArrowRight') { ir(actual + 1); e.preventDefault(); }
+        });
+        var x0 = null;
+        vista.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+        vista.addEventListener('touchend', function (e) {
+            if (x0 === null) return;
+            var dx = e.changedTouches[0].clientX - x0;
+            if (Math.abs(dx) > 40) ir(actual + (dx < 0 ? 1 : -1));
+            x0 = null;
+        });
+
+        cont.appendChild(cab); cont.appendChild(escena); cont.appendChild(pie); cont.appendChild(puntos);
+        ir(0);
+        return cont;
+    }
+
+    var nav = document.getElementById('nav'), cuerpo = document.getElementById('temas');
+    TEMAS.forEach(function (t) {
+        var a = el('a', 'btn-link', t.titulo); a.href = '#' + t.id; nav.appendChild(a);
+
+        var sec = el('section', 'tema'); sec.id = t.id;
+        sec.appendChild(el('h2', 'tema-titulo', t.titulo));
+        var docs = el('div', 'docs');
+        t.docs.forEach(function (d) {
+            var a2 = el('a', 'btn-link mini', d.texto);
+            a2.href = d.href; a2.target = '_blank'; a2.rel = 'noopener'; docs.appendChild(a2);
+        });
+        if (t.docs.length) sec.appendChild(docs);
+        if (t.libros.length) sec.appendChild(crearCarrusel(t));
+        cuerpo.appendChild(sec);
+    });
+    </script>
+</body>
+</html>
